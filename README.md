@@ -24,4 +24,61 @@ Existen múltiples opciones pero en esta guía te daré dos opciones para que el
  
 Opcional:
 * [Raspberry Pi HQ Camera Case](https://learn.adafruit.com/raspberry-pi-hq-camera-case/3d-printing) (En caso de que cuentes con una impresora 3D o de hacer impresiones 3D te dejo un link para que puedas imprimir una carcasa en forma de cámara, mas adelante te dejo la imagen de como se vería).
-*Si utilizas el Case, necesitarás tornillos a la medida [M2.5](https://www.adafruit.com/product/3299), necesitaremos de 12mm y 8mm de largo, aunque para aprovechar puedes comprar algunos de 10mm y 5mm pueden ser útiles para otros proyectos, los puedes conseguir en Amazon o tiendas especializadas en electrónica.
+* Si utilizas el Case, necesitarás tornillos a la medida [M2.5](https://www.adafruit.com/product/3299), necesitaremos de 12mm y 8mm de largo, aunque para aprovechar puedes comprar algunos de 10mm y 5mm pueden ser útiles para otros proyectos, los puedes conseguir en Amazon o tiendas especializadas en electrónica.
+
+En caso hicieras uso del modelo 3D aquí tienes una imagen de cómo se vería, esta increíble no lo crees?
+
+
+Ahora hablaremos de los dos modulos que mencione.
+
+### 1.1 HQ Camera module
+
+Este módulo es el más reciente accesorio de cámara Raspberry Pi. Ofrece una resolución más alta (12 megapíxeles, en comparación con la anterior de 8 megapíxeles) y sensibilidad (aproximadamente un 50% más de área por píxel para rendimiento mejorado en condiciones de poca luz) que el módulo de cámara v2 existente, y está diseñado para funcionar con lentes intercambiables en montura C y CS. Se pueden utilizar otros lentes utilizando adaptadores.
+
+Los lentes de 6 mm con montura CS y [16 mm](https://www.adafruit.com/product/4562) con montura C son ejemplos de todos los compatibles que existen.
+La cámara de alta calidad ofrece una alternativa al módulo de cámara v2.
+
+Para aplicaciones industriales y de consumo, incluidas cámaras de seguridad, que requieren los más altos niveles de fidelidad visual y/o integración con óptica especializada. Es compatible con todos los modelos de Raspberry Pi, la última versión de software.
+
+
+### 1.2 Raspberry Pi Camera Board v2 (8 Mp)
+
+Este módulo de cámara de 8 Mp es capaz de capturar video de 1080 px e imágenes, se puede conectar a todos los modelos de Raspberry Pi. Listo para conectar y usar, muy adecuado para fotografiar por lapsos, grabar video o para usarlo en aplicaciones de seguridad y en detección de movimientos. Sólo hay que conectar el cable incluido al puerto CSI de la Raspberry Pi.
+
+El módulo es pequeño mide 25 mm x 23 mm x 9 mm y tiene una peso de 3 gr, haciéndola perfecta para aplicaciones móviles u otras en donde el peso es un factor muy importante.
+
+El sensor tiene una resolución de 8 megapíxeles y tiene un lente de enfoque. En cuanto a las imágenes, la cámara es capaz de tomar imágenes estáticas hasta de 3280 x 2464 pixeles y videos de 1830p30.
+
+
+## 2.Configuración de la cámara
+
+### 2.1 Conexión física
+
+Todos los modelos actuales de Raspberry Pi tienen un puerto para conectar el módulo de la cámara.
+
+**Nota: Si desea utilizar una Raspberry Pi Zero, necesita un [cable](https://www.adafruit.com/product/3157) del módulo de la cámara que se ajuste al puerto del módulo de la cámara más pequeño de la Raspberry Pi Zero.**
+
+
+Conecte el módulo de la cámara.
+
+**Asegúrese de que su Raspberry Pi esté apagada.**
+
+1.   Localice el puerto del módulo de la cámara
+2.   Tire suavemente hacia arriba de los bordes del clip de plástico del puerto
+3. Inserte el cable plano del módulo de la cámara (**Nota: asegúrese de que el cable esté en la dirección correcta. El lado azul del cable va mirando hacia el conector jack y de los puertos USB**)
+4. Vuelva a colocar el clip de plástico en su lugar.
+
+
+La forma mas simple de conectar el modulo HQ en mi caso se vería de la siguiente forma:
+
+
+Yo opté por solamente utilizar el soporte de la cámara con la Raspberry por lo que te mostraré un poco de cómo utilice los tornillos y el resultado final.
+
+
+Ahora solo faltaría conectar el lente que en esta ocasión utilicé el de 6mm, puedes saltarte esta parte y pasar a 2.2 si es que utilizaste la opción V2 de 8 Mp.
+
+
+Tenemos que quitar la tapa anti-polvo para el lente de 6mm y el adaptador C-CS entonces nos quedaría de la siguiente forma:
+
+
+Los lentes vienen con dos tapas una del lado del lente y otra por la entrada que conecta al modulo.
