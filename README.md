@@ -295,3 +295,53 @@ camera.stop_preview()
 Ejecute el código.
 
 Su Raspberry Pi debería abrir una vista previa, grabar 5 segundos de video y luego cerrar la vista previa.
+
+
+
+
+# 4.Extras
+
+
+## 4.1 Formato de video MP4
+
+
+Raspberry Pi captura video como un formato de video H264 sin procesar. Muchos reproductores multimedia se negarán a reproducirlo, o lo reproducirá a una velocidad incorrecta, a menos que esté "envuelto" en un formato contenedor adecuado como MP4. La forma más fácil de obtener un archivo MP4 con el comando raspivid es usando MP4Box.
+
+Instale MP4Box con este comando:
+
+
+
+```
+sudo apt install -y gpac
+```
+
+
+Capture su video sin procesar con raspivid y envuélvalo en un contenedor MP4 como este:
+
+
+
+```
+# Capture 30 segundos de video sin procesar a 640x480 y una tasa de bits de 150kB/s en un archivo pivideo.h264:
+raspivid -t 30000 -w 640 -h 480 -fps 25 -b 1200000 -p 0,0,640,480 -o pivideo.h264
+# Envuelva el video sin procesar con un contenedor MP4:
+MP4Box -add pivideo.h264 pivideo.mp4
+# Elimina el archivo sin procesar de origen, dejando que se reproduzca el archivo pivideo.mp4 restante
+rm pivideo.h264
+```
+
+
+Alternativamente, envuelva el formato MP4 alrededor de su salida raspivid existente, con:
+
+
+```
+MP4Box -add video.h264 video.mp4
+```
+
+
+
+
+Con esto llegamos al fin de esta guía, para revisar mas sobre el formato MP4 en Raspberry visita [raspivid](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspivid.md).
+
+Sí quieres saber mas sobre Raspberry Pi y el uso de la cámara visita [Camera Raspberry Pi](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/6).
+
+Visita mi repositorio en Github.
