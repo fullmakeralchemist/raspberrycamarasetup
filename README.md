@@ -190,3 +190,44 @@ Podremos ver la vista previa del archivo y después en la carpeta de Raspberry P
 
 
 ## 3.Controlar el módulo de la cámara con código Python
+
+### 3.1 Vista previa
+
+
+La biblioteca Python ***picamera*** le permite controlar su módulo de cámara y crear proyectos increíbles.
+ 
+Abra un editor de Python 3, como Thonny Python IDE o aprovechando el tutorial anterior [VS Code en Raspberry Pi](https://github.com/fullmakeralchemist/gitvscode) podemos usar el VS Code, crearemos una  carpeta en el escritorio llamada camera o cámara, daremos clic derecho para abrir las opciones, seleccionaremos "Open current folder in terminal", para abrir directamente el folder y la terminal, también puedes hacer esto en la terminal con el comando cd para ubicarnos en la carpeta camera.
+ 
+Una vez ubicados en dentro de la terminal en la carpeta utilizaremos el comando:
+ 
+`code .`
+ 
+Con esto nos abrirá directamente VS Code en la carpeta que vamos a trabajar
+
+
+Abra un archivo nuevo y guárdelo como camera.py.
+
+**Nota: es importante que nunca guarde el archivo como picamera.py**
+
+En VS code podemos encontrar el icono de crear nuevo archivo.
+
+
+Ahora daremos clic en "CTRL + S" para guardar y nos aparecerá la siguiente ventana. Ingresamos el nombre de nuestro archivo para poder ingresar el código.
+
+Antes de ingresar el código debemos asegurarnos de tener instalada la herramienta de Python para VS Code. Verifique con la imagen que tiene instalada la que utilizaremos.
+
+
+Ingrese el siguiente código que nos permitirá hacer la misma función de darnos una imagen previa para verificar que nuestro lente está enfocado si ya hiciste este paso y no has desconectado la cámara puedes omitir este paso y pasar al siguiente código:
+
+
+
+```
+from picamera import PiCamera
+from time import sleep
+
+camera = PiCamera()
+
+camera.start_preview()
+sleep(5)
+camera.stop_preview()
+```
