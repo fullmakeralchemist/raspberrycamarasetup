@@ -139,3 +139,54 @@ Nos dará de seguro una imagen borrosa en el caso del modulo HQ para el módulo 
 Ahora veremos los pasos para enfocar el modulo con su lente.
 
 
+#### 2.2.1 Apertura
+Para arreglar esto hay que ajustar la apertura, mantenga la cámara con el objetivo en dirección opuesta a usted.
+Gire el anillo del medio mientras sostiene el anillo exterior, más alejado de la cámara, estable. Turno en el sentido de las agujas del reloj para cerrar la apertura y reducir brillo de la imagen. Gire en sentido antihorario para abrir la apertura. Una vez que estés feliz con la luz nivel, apriete el tornillo en el lateral de la lente para bloquear la apertura.
+
+
+#### 2.2.2 Enfoque 
+Primero, bloquee el anillo de enfoque interno, etiquetado
+"NEAR FAR", en posición apretando su tornillo. Ahora sostenga la cámara con la lente de espaldas a ti. Sostenga los dos exteriores anillos de la lente y gírese en el sentido de las agujas del reloj
+hasta que la imagen esté enfocada, tomará cuatro o cinco vueltas enteras. Para ajustar el enfoque, gire los dos anillos exteriores en el sentido de las agujas del reloj para enfocar un objeto cercano. Gire en sentido antihorario para centrarse en un objeto distante.Lo mas seguro es que necesitarás ajustar la apertura nuevamente después de esto cada que quites y pongas el lente.
+
+
+
+
+Después de enfocar, tendremos que cerrar la ventana, tal vez no podamos por que la imagen es muy grande y no aparece el icono de cerrar, en ese caso tendremos que acceder por SSH y usar el comando:
+ 
+```
+sudo reboot
+```
+Para poder acceder de nuevo por VNC.
+
+
+#### 2.2.3 Prueba imagen.jpg
+
+
+Ahora deberías ver una imagen clara y podrás tomar una fotografía de prueba ingresando el comando:
+
+`raspistill -o test.jpg`
+
+Cuando presione ENTER, aparecerá una imagen de vista previa en vivo, y después de un período predeterminado de cinco segundos, la cámara capturará una única imagen fija. Esto se guardará en su carpeta de inicio y llamado test.jpg.
+
+
+Así se ve la imagen que tomé con este comando:
+
+
+#### 2.2.4 Prueba video
+ 
+Para grabar videos, raspivid es lo que necesitas. Pruébalo con este comando de Terminal:
+ 
+-t 10000 es el tiempo que va a estar grabando video, 10000 milisegundos serían 10 segundos de grabación. h264 es el formato de video para reproducir en vlc, reproductor que incluye el Raspberry Pi OS, en caso de que quieras cambiar el formato por MP4 que es un formato más común y amigable para edición, al final te dejare algunos comandos y ligas para esto.
+ 
+```
+raspivid -t 10000 -o testvideo.h264
+```
+
+
+
+Podremos ver la vista previa del archivo y después en la carpeta de Raspberry Pi encontraremos el archivo para poder reproducirlo.
+
+
+
+## 3.Controlar el módulo de la cámara con código Python
