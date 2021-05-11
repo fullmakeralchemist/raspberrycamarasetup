@@ -231,3 +231,67 @@ camera.start_preview()
 sleep(5)
 camera.stop_preview()
 ```
+
+
+Usamos “CRTL + S” para guardar y ahora abriremos una terminal en VS Code para este proyecto.
+
+
+Ahora podremos ver la terminal en la parte inferior y solo necesitamos correr las líneas de código con el botón que tiene el VS Code en la parte superior derecha (También puedes hacer esto desde la terminal de la forma tradicional y utilizar el comando: `sudo python3 camera.py`)
+
+
+Podrás ver en la parte inferior la ejecución del comando.
+
+
+Al ejecutarse abrira una ventana muy grande que cerrara a los 5 segundos como tenemos definido en `sleep(5)`, tenemos que definir un tiempo si no se mantendra abierta la ventana como en `raspistill -t 0` entonces tendriamos que usar el SSH para ingresar el comando `sudo reboot` para ingresar nuevamente y seguir con el siguiente codigo.
+
+
+### 3.2 Fotografia 
+
+
+Ahora para tomar algunas fotografías puede crear un segundo archivo en mi caso lo llame cameratake.py, modifique su código para agregar una línea camera.capture ():
+
+```
+from picamera import PiCamera 
+from time import sleep 
+camera = PiCamera()
+camera.start_preview() 
+sleep(5)   
+camera.capture('/home/pi/Desktop/image.jpg')        #directorio en el que va a guardar la imagen y el nombre de la imagen
+camera.stop_preview() 
+```
+**Nota: es importante usar un sleep de al menos dos segundos antes de capturar una imagen, porque esto le da tiempo al sensor de la cámara para detectar los niveles de luz.**
+
+
+Ejecutar con el botón de VS Code.
+
+
+Debería ver la vista previa de la cámara abierta durante cinco segundos y luego se debe capturar una imagen fija. Mientras se toma la imagen, puede ver la vista previa ajustarse brevemente a una resolución diferente.
+
+Su nueva imagen debe guardarse en el escritorio.
+
+
+
+### 3.3 Video
+
+
+¡Ahora graba un video!
+
+Modifique su código para eliminar capture() y en su lugar agregue start_recording() y stop_recording()
+
+Su código debería verse así ahora:
+
+
+
+```
+from picamera import PiCamera
+from time import sleep
+camera = PiCamera()
+camera.start_preview()
+camera.start_recording('/home/pi/video.h264') #directorio en el que va a guardar el video y el nombre del archivo
+sleep(10)
+camera.stop_recording()
+camera.stop_preview()
+```
+Ejecute el código.
+
+Su Raspberry Pi debería abrir una vista previa, grabar 5 segundos de video y luego cerrar la vista previa.
