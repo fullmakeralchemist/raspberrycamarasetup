@@ -222,14 +222,15 @@ Ingrese el siguiente código que nos permitirá hacer la misma función de darno
 
 
 ```
-from picamera import PiCamera
+from picamera import PiCamera     #importa paquete
 from time import sleep
 
-camera = PiCamera()
+camera = PiCamera()    #Primero, importamos la clase PiCamera del módulo picamera. 
+                       #Usaremos esa clase para tener acceso a la cámara física.
 
-camera.start_preview()
-sleep(5)
-camera.stop_preview()
+camera.start_preview()      #método para iniciar la visualización de la entrada de la cámara.
+sleep(5)                    #tiempo que esta abierta la visualización
+camera.stop_preview()       #método para cerrar la visualización de la entrada de la cámara.
 ```
 
 
@@ -256,7 +257,8 @@ from time import sleep
 camera = PiCamera()
 camera.start_preview() 
 sleep(5)   
-camera.capture('/home/pi/Desktop/image.jpg')        #directorio en el que va a guardar la imagen y el nombre de la imagen
+camera.capture('/home/pi/Desktop/image.jpg')        #directorio en el que va a guardar la imagen y 
+                                                    #el nombre de la imagen
 camera.stop_preview() 
 ```
 **Nota: es importante usar un sleep de al menos dos segundos antes de capturar una imagen, porque esto le da tiempo al sensor de la cámara para detectar los niveles de luz.**
@@ -287,7 +289,8 @@ from picamera import PiCamera
 from time import sleep
 camera = PiCamera()
 camera.start_preview()
-camera.start_recording('/home/pi/video.h264') #directorio en el que va a guardar el video y el nombre del archivo
+camera.start_recording('/home/pi/video.h264') #directorio en el que va a guardar el 
+                                              #video y el nombre del archivo
 sleep(10)
 camera.stop_recording()
 camera.stop_preview()
