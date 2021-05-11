@@ -82,3 +82,60 @@ Tenemos que quitar la tapa anti-polvo para el lente de 6mm y el adaptador C-CS e
 
 
 Los lentes vienen con dos tapas una del lado del lente y otra por la entrada que conecta al modulo.
+
+#### 2.1.1 Colocación del lente
+La lente de 6 mm tiene montura CS,
+por lo que no necesita el anillo adaptador C-CS. No se enfocará correctamente si el adaptador está instalado, así que, si es necesario, retírelo.
+Luego, gire la lente en el sentido de las agujas del reloj hasta el final para dejarlo conectactado con el anillo de ajuste del enfoque posterior. **No debe apretarse con mucha fuerza por que puedes dañar el lente o el modulo, solamente que quede firme.**
+
+
+#### 2.1.2 Ajuste de enfoque anillo posterior y tornillo de bloqueo
+El anillo de ajuste del enfoque posterior debe estar atornillado completamente para la distancia focal posterior más corta posible. Utilice el tornillo de bloqueo del enfoque posterior para
+asegúrarse de que no se mueva de esta posición al ajustar la apertura o el enfoque (Al comprar el modulo HQ incluye un atornillador de la medida exacta para poder manipular el tornillo de bloqueo).
+
+
+Ya listo e instalado nuestro lente se verá de la siguiente forma.
+
+
+Una vez ya instalado el lente y conectado el módulo a nuestra Raspberry podemos seguir con la configuración al encender e ingresar por VNC.
+
+### 2.2 Configuración de Raspberry Pi por VNC.
+
+1.   Enciende tu Raspberry Pi.
+2.   Ingresa por VNC desde tu ordenador a tu Raspberry.
+3.   Vaya al menú principal y abra **Raspberry Pi Configuration**.
+
+Seleccione la pestaña **Interfaces** y asegúrese de que la cámara esté habilitada (**enabled**)
+
+
+Reinicia tu Raspberry Pi.
+
+
+Una vez reiniciada, pasaremos a hacer unos cambios en VNC dentro del escritorio de Raspberry, al ejecutar algunos comandos nos mostrará la vista previa de lo que va a capturar en VNC no es posible a menos de que hagamos estos cambios. Lo primero es dirigirnos al icono de VNC y dar clic.
+
+
+Nos abrirá la siguiente ventana, donde encontraremos en la parte derecha un recuadro daremos clic.
+
+
+Daremos clic en "Options".
+
+Nos iremos a la pestaña "Troubleshooting"
+
+
+Daremos clic en la casilla "Enable direct capture mode" y después daremos clic en Apply . Esto nos permitirá ver la vista previa de lo que está capturando nuestro modulo cámara. Se irá a pantalla negra unos segundos y cuando recupere la imagen estará listo, no es necesario pero puedes reiniciar la Raspberry para comenzar con el siguiente paso.
+
+
+Por el momento la cámara está desenfocada así que necesitamos ejecutar un comando para poder tener acceso a la vista. Así que vamos a abrir la terminal de Raspberry.
+
+
+raspistill es una herramienta de comandos para capturar imágenes de la cámara. Para verificar que la cámara está instalada correctamente y usar la cámara sólo como un visor, sin guardar una foto, ingresa este
+comando:
+ 
+`raspistill -t 0`
+ 
+Nos dará de seguro una imagen borrosa en el caso del modulo HQ para el módulo V2 no tendrá mayor problema.
+
+
+Ahora veremos los pasos para enfocar el modulo con su lente.
+
+
