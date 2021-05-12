@@ -227,7 +227,6 @@ Podremos ver la vista previa del archivo y después en la carpeta de Raspberry P
 
 ### 3.1 Vista previa
 
-
 La biblioteca Python ***picamera*** le permite controlar su módulo de cámara y crear proyectos increíbles.
  
 Abra un editor de Python 3, como Thonny Python IDE o aprovechando el tutorial anterior [VS Code en Raspberry Pi](https://github.com/fullmakeralchemist/gitvscode) podemos usar el VS Code, crearemos una  carpeta en el escritorio llamada camera o cámara, daremos clic derecho para abrir las opciones, seleccionaremos "Open current folder in terminal", para abrir directamente el folder y la terminal, también puedes hacer esto en la terminal con el comando cd para ubicarnos en la carpeta camera.
@@ -238,6 +237,7 @@ Una vez ubicados en dentro de la terminal en la carpeta utilizaremos el comando:
  
 Con esto nos abrirá directamente VS Code en la carpeta que vamos a trabajar
 
+![2021-05-06-112129_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117911744-ea955280-b2a3-11eb-88b5-0d1e7c93538d.png)
 
 Abra un archivo nuevo y guárdelo como camera.py.
 
@@ -245,15 +245,17 @@ Abra un archivo nuevo y guárdelo como camera.py.
 
 En VS code podemos encontrar el icono de crear nuevo archivo.
 
+![2021-05-06-112835_1024x768_scrot2](https://user-images.githubusercontent.com/79243784/117911776-f7b24180-b2a3-11eb-8e12-05c0edde9720.png)
 
 Ahora daremos clic en "CTRL + S" para guardar y nos aparecerá la siguiente ventana. Ingresamos el nombre de nuestro archivo para poder ingresar el código.
 
+![2021-05-06-112636_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117911796-ff71e600-b2a3-11eb-8420-fec124acae41.png)
+
 Antes de ingresar el código debemos asegurarnos de tener instalada la herramienta de Python para VS Code. Verifique con la imagen que tiene instalada la que utilizaremos.
 
+![2021-05-06-112745_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117911819-0ac51180-b2a4-11eb-9ce1-30132e636553.png)
 
 Ingrese el siguiente código que nos permitirá hacer la misma función de darnos una imagen previa para verificar que nuestro lente está enfocado si ya hiciste este paso y no has desconectado la cámara puedes omitir este paso y pasar al siguiente código:
-
-
 
 ```
 from picamera import PiCamera     #importa paquete
@@ -267,21 +269,23 @@ sleep(5)                    #tiempo que esta abierta la visualización
 camera.stop_preview()       #método para cerrar la visualización de la entrada de la cámara.
 ```
 
+![2021-05-06-112645_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117911877-20d2d200-b2a4-11eb-87e4-2a73cbf38d04.png)
 
 Usamos “CRTL + S” para guardar y ahora abriremos una terminal en VS Code para este proyecto.
 
+![2021-05-06-112652_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117911909-2d572a80-b2a4-11eb-97fe-c0f2f11e2b42.png)
 
 Ahora podremos ver la terminal en la parte inferior y solo necesitamos correr las líneas de código con el botón que tiene el VS Code en la parte superior derecha (También puedes hacer esto desde la terminal de la forma tradicional y utilizar el comando: `sudo python3 camera.py`)
 
+![2021-05-06-112828_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117911958-4069fa80-b2a4-11eb-89d5-07140390f9ec.png)
 
 Podrás ver en la parte inferior la ejecución del comando.
 
+![2021-05-06-112845_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117912047-65f70400-b2a4-11eb-83ba-c0b5066ff8ba.png)
 
 Al ejecutarse abrira una ventana muy grande que cerrara a los 5 segundos como tenemos definido en `sleep(5)`, tenemos que definir un tiempo si no se mantendra abierta la ventana como en `raspistill -t 0` entonces tendriamos que usar el SSH para ingresar el comando `sudo reboot` para ingresar nuevamente y seguir con el siguiente codigo.
 
-
 ### 3.2 Fotografia 
-
 
 Ahora para tomar algunas fotografías puede crear un segundo archivo en mi caso lo llame cameratake.py, modifique su código para agregar una línea camera.capture ():
 
@@ -297,26 +301,21 @@ camera.stop_preview()
 ```
 **Nota: es importante usar un sleep de al menos dos segundos antes de capturar una imagen, porque esto le da tiempo al sensor de la cámara para detectar los niveles de luz.**
 
-
 Ejecutar con el botón de VS Code.
 
+![2021-05-06-113114_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117912105-7c04c480-b2a4-11eb-8b48-581f6890fc03.png)
 
 Debería ver la vista previa de la cámara abierta durante cinco segundos y luego se debe capturar una imagen fija. Mientras se toma la imagen, puede ver la vista previa ajustarse brevemente a una resolución diferente.
 
 Su nueva imagen debe guardarse en el escritorio.
 
-
+![2021-05-06-113130_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117912123-845cff80-b2a4-11eb-8af0-660d60e44983.png)
 
 ### 3.3 Video
 
-
 ¡Ahora graba un video!
 
-Modifique su código para eliminar capture() y en su lugar agregue start_recording() y stop_recording()
-
-Su código debería verse así ahora:
-
-
+Modifique su código para eliminar capture() y en su lugar agregue start_recording() y stop_recording(). Su código debería verse así ahora:
 
 ```
 from picamera import PiCamera
@@ -329,33 +328,28 @@ sleep(10)
 camera.stop_recording()
 camera.stop_preview()
 ```
+
+![2021-05-06-113254_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117912188-a9ea0900-b2a4-11eb-95cf-0fcbfac78e42.png)
+
 Ejecute el código.
 
 Su Raspberry Pi debería abrir una vista previa, grabar 5 segundos de video y luego cerrar la vista previa.
 
-
-
+![2021-05-06-113306_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117912196-aeaebd00-b2a4-11eb-8afb-f2af40f56fcc.png)
 
 # 4.Extras
 
-
 ## 4.1 Formato de video MP4
-
 
 Raspberry Pi captura video como un formato de video H264 sin procesar. Muchos reproductores multimedia se negarán a reproducirlo, o lo reproducirá a una velocidad incorrecta, a menos que esté "envuelto" en un formato contenedor adecuado como MP4. La forma más fácil de obtener un archivo MP4 con el comando raspivid es usando MP4Box.
 
 Instale MP4Box con este comando:
 
-
-
 ```
 sudo apt install -y gpac
 ```
 
-
 Capture su video sin procesar con raspivid y envuélvalo en un contenedor MP4 como este:
-
-
 
 ```
 # Capture 30 segundos de video sin procesar a 640x480 y una tasa de bits de 150kB/s en un archivo pivideo.h264:
@@ -366,16 +360,11 @@ MP4Box -add pivideo.h264 pivideo.mp4
 rm pivideo.h264
 ```
 
-
 Alternativamente, envuelva el formato MP4 alrededor de su salida raspivid existente, con:
-
 
 ```
 MP4Box -add video.h264 video.mp4
 ```
-
-
-
 
 Con esto llegamos al fin de esta guía, para revisar mas sobre el formato MP4 en Raspberry visita [raspivid](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspivid.md).
 
