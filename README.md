@@ -26,7 +26,7 @@ Opcional:
 * [Raspberry Pi HQ Camera Case](https://learn.adafruit.com/raspberry-pi-hq-camera-case/3d-printing) (En caso de que cuentes con una impresora 3D o de hacer impresiones 3D te dejo un link para que puedas imprimir una carcasa en forma de cámara, mas adelante te dejo la imagen de como se vería).
 * Si utilizas el Case, necesitarás tornillos a la medida [M2.5](https://www.adafruit.com/product/3299), necesitaremos de 12mm y 8mm de largo, aunque para aprovechar puedes comprar algunos de 10mm y 5mm pueden ser útiles para otros proyectos, los puedes conseguir en Amazon o tiendas especializadas en electrónica.
 
-<img src=(https://user-images.githubusercontent.com/79243784/117897096-a85e1800-b287-11eb-85b7-a151c2f9dfa8.jpg) width="400" height="400">
+![20210502_132013](https://user-images.githubusercontent.com/79243784/117899439-be220c00-b28c-11eb-98ba-e935e9548107.jpg)
 
 En caso hicieras uso del modelo 3D aquí tienes una imagen de cómo se vería, esta increíble no lo crees?
 
@@ -107,15 +107,17 @@ La lente de 6 mm tiene montura CS,
 por lo que no necesita el anillo adaptador C-CS. No se enfocará correctamente si el adaptador está instalado, así que, si es necesario, retírelo.
 Luego, gire la lente en el sentido de las agujas del reloj hasta el final para dejarlo conectactado con el anillo de ajuste del enfoque posterior. **No debe apretarse con mucha fuerza por que puedes dañar el lente o el modulo, solamente que quede firme.**
 
-
+![gira](https://user-images.githubusercontent.com/79243784/117899476-d003af00-b28c-11eb-80fd-3747125546ba.png)
 
 #### 2.1.2 Ajuste de enfoque anillo posterior y tornillo de bloqueo
 El anillo de ajuste del enfoque posterior debe estar atornillado completamente para la distancia focal posterior más corta posible. Utilice el tornillo de bloqueo del enfoque posterior para
 asegúrarse de que no se mueva de esta posición al ajustar la apertura o el enfoque (Al comprar el modulo HQ incluye un atornillador de la medida exacta para poder manipular el tornillo de bloqueo).
 
+![atornilla](https://user-images.githubusercontent.com/79243784/117899492-d7c35380-b28c-11eb-9de1-ac270723cc5c.png)
 
 Ya listo e instalado nuestro lente se verá de la siguiente forma.
 
+![20210502_143918](https://user-images.githubusercontent.com/79243784/117899502-de51cb00-b28c-11eb-95db-ceb0a9a4c218.jpg)
 
 Una vez ya instalado el lente y conectado el módulo a nuestra Raspberry podemos seguir con la configuración al encender e ingresar por VNC.
 
@@ -125,28 +127,39 @@ Una vez ya instalado el lente y conectado el módulo a nuestra Raspberry podemos
 2.   Ingresa por VNC desde tu ordenador a tu Raspberry.
 3.   Vaya al menú principal y abra **Raspberry Pi Configuration**.
 
+![pi-configuration-menu](https://user-images.githubusercontent.com/79243784/117899529-eb6eba00-b28c-11eb-978c-ff27014dc510.png)
+
 Seleccione la pestaña **Interfaces** y asegúrese de que la cámara esté habilitada (**enabled**)
 
+![1CAMERAENABLE](https://user-images.githubusercontent.com/79243784/117899553-fb869980-b28c-11eb-9493-c81c301eb4ad.png)
 
 Reinicia tu Raspberry Pi.
 
+![3](https://user-images.githubusercontent.com/79243784/117899579-07725b80-b28d-11eb-950b-b470adfe0725.png)
 
 Una vez reiniciada, pasaremos a hacer unos cambios en VNC dentro del escritorio de Raspberry, al ejecutar algunos comandos nos mostrará la vista previa de lo que va a capturar en VNC no es posible a menos de que hagamos estos cambios. Lo primero es dirigirnos al icono de VNC y dar clic.
 
+![TERMINAL](https://user-images.githubusercontent.com/79243784/117899610-1822d180-b28d-11eb-8eef-fa20be6bc57b.png)
 
 Nos abrirá la siguiente ventana, donde encontraremos en la parte derecha un recuadro daremos clic.
 
+![VNC1](https://user-images.githubusercontent.com/79243784/117899631-2244d000-b28d-11eb-9a9a-0956f03f07f7.png)
 
 Daremos clic en "Options".
 
+![options](https://user-images.githubusercontent.com/79243784/117899691-41dbf880-b28d-11eb-992a-ff5dfc4319e0.png)
+
 Nos iremos a la pestaña "Troubleshooting"
 
+![2021-05-02-152414_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117899707-4c968d80-b28d-11eb-8bbc-bdfe6de2db8a.png)
 
 Daremos clic en la casilla "Enable direct capture mode" y después daremos clic en Apply . Esto nos permitirá ver la vista previa de lo que está capturando nuestro modulo cámara. Se irá a pantalla negra unos segundos y cuando recupere la imagen estará listo, no es necesario pero puedes reiniciar la Raspberry para comenzar con el siguiente paso.
 
+![2021-05-02-152426_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117899734-56b88c00-b28d-11eb-9962-24a4284477c3.png)
 
 Por el momento la cámara está desenfocada así que necesitamos ejecutar un comando para poder tener acceso a la vista. Así que vamos a abrir la terminal de Raspberry.
 
+![4TERMINAL](https://user-images.githubusercontent.com/79243784/117899764-67690200-b28d-11eb-9682-b7aa59ed2026.png)
 
 raspistill es una herramienta de comandos para capturar imágenes de la cámara. Para verificar que la cámara está instalada correctamente y usar la cámara sólo como un visor, sin guardar una foto, ingresa este
 comando:
@@ -155,22 +168,24 @@ comando:
  
 Nos dará de seguro una imagen borrosa en el caso del modulo HQ para el módulo V2 no tendrá mayor problema.
 
+![6](https://user-images.githubusercontent.com/79243784/117899782-78197800-b28d-11eb-9604-5398440d1484.png)
 
 Ahora veremos los pasos para enfocar el modulo con su lente.
 
+![yes](https://user-images.githubusercontent.com/79243784/117899834-941d1980-b28d-11eb-90ff-37ee60122136.png)
 
 #### 2.2.1 Apertura
 Para arreglar esto hay que ajustar la apertura, mantenga la cámara con el objetivo en dirección opuesta a usted.
 Gire el anillo del medio mientras sostiene el anillo exterior, más alejado de la cámara, estable. Turno en el sentido de las agujas del reloj para cerrar la apertura y reducir brillo de la imagen. Gire en sentido antihorario para abrir la apertura. Una vez que estés feliz con la luz nivel, apriete el tornillo en el lateral de la lente para bloquear la apertura.
 
+![aprtura](https://user-images.githubusercontent.com/79243784/117899916-caf32f80-b28d-11eb-8b90-2671931d9ea0.png)
 
 #### 2.2.2 Enfoque 
 Primero, bloquee el anillo de enfoque interno, etiquetado
 "NEAR FAR", en posición apretando su tornillo. Ahora sostenga la cámara con la lente de espaldas a ti. Sostenga los dos exteriores anillos de la lente y gírese en el sentido de las agujas del reloj
 hasta que la imagen esté enfocada, tomará cuatro o cinco vueltas enteras. Para ajustar el enfoque, gire los dos anillos exteriores en el sentido de las agujas del reloj para enfocar un objeto cercano. Gire en sentido antihorario para centrarse en un objeto distante.Lo mas seguro es que necesitarás ajustar la apertura nuevamente después de esto cada que quites y pongas el lente.
 
-
-
+![enfoque](https://user-images.githubusercontent.com/79243784/117899921-cfb7e380-b28d-11eb-9df7-b3492bb27ae9.png)
 
 Después de enfocar, tendremos que cerrar la ventana, tal vez no podamos por que la imagen es muy grande y no aparece el icono de cerrar, en ese caso tendremos que acceder por SSH y usar el comando:
  
@@ -179,9 +194,7 @@ sudo reboot
 ```
 Para poder acceder de nuevo por VNC.
 
-
 #### 2.2.3 Prueba imagen.jpg
-
 
 Ahora deberías ver una imagen clara y podrás tomar una fotografía de prueba ingresando el comando:
 
@@ -189,9 +202,11 @@ Ahora deberías ver una imagen clara y podrás tomar una fotografía de prueba i
 
 Cuando presione ENTER, aparecerá una imagen de vista previa en vivo, y después de un período predeterminado de cinco segundos, la cámara capturará una única imagen fija. Esto se guardará en su carpeta de inicio y llamado test.jpg.
 
+![2021-05-02-162452_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117899956-e3fbe080-b28d-11eb-8c27-5245ed3c0925.png)
 
 Así se ve la imagen que tomé con este comando:
 
+![test](https://user-images.githubusercontent.com/79243784/117899972-ebbb8500-b28d-11eb-943b-24779509291d.jpg)
 
 #### 2.2.4 Prueba video
  
@@ -202,12 +217,11 @@ Para grabar videos, raspivid es lo que necesitas. Pruébalo con este comando de 
 ```
 raspivid -t 10000 -o testvideo.h264
 ```
-
-
+![2021-05-06-111139_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117900055-1279bb80-b28e-11eb-8f5a-b4b876977c78.png)
 
 Podremos ver la vista previa del archivo y después en la carpeta de Raspberry Pi encontraremos el archivo para poder reproducirlo.
 
-
+![2021-05-06-111916_1024x768_scrot](https://user-images.githubusercontent.com/79243784/117900127-33daa780-b28e-11eb-8b73-11dc4ae42a53.png)
 
 ## 3.Controlar el módulo de la cámara con código Python
 
