@@ -26,7 +26,7 @@ Opcional:
 * [Raspberry Pi HQ Camera Case](https://learn.adafruit.com/raspberry-pi-hq-camera-case/3d-printing) (En caso de que cuentes con una impresora 3D o de hacer impresiones 3D te dejo un link para que puedas imprimir una carcasa en forma de cámara, mas adelante te dejo la imagen de como se vería).
 * Si utilizas el Case, necesitarás tornillos a la medida [M2.5](https://www.adafruit.com/product/3299), necesitaremos de 12mm y 8mm de largo, aunque para aprovechar puedes comprar algunos de 10mm y 5mm pueden ser útiles para otros proyectos, los puedes conseguir en Amazon o tiendas especializadas en electrónica.
 
-![20210502_132013](https://user-images.githubusercontent.com/79243784/117897096-a85e1800-b287-11eb-85b7-a151c2f9dfa8.jpg)
+<img src=(https://user-images.githubusercontent.com/79243784/117897096-a85e1800-b287-11eb-85b7-a151c2f9dfa8.jpg) width="400" height="400">
 
 En caso hicieras uso del modelo 3D aquí tienes una imagen de cómo se vería, esta increíble no lo crees?
 
