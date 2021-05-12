@@ -343,7 +343,7 @@ MP4Box -add video.h264 video.mp4
 
 
 
-Con esto llegamos al fin de esta guía, para revisar mas sobre el formato MP4 en Raspberry visita [raspivid](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspivid.md).
+Con esto llegamos al fin de esta guía, puedes aprovechar la [guía de Git y VS Code](https://github.com/fullmakeralchemist/gitvscode) para subir estos códigos a tu Github, para revisar mas sobre el formato MP4 en Raspberry visita [raspivid](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspivid.md).
 
 Sí quieres saber mas sobre Raspberry Pi y el uso de la cámara visita [Camera Raspberry Pi](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/6).
 
